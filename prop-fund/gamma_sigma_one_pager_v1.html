@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamma Sigma Prop Fund — Investor Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #F0EBE0;
+  --bg2:      #E8E1D3;
+  --bg3:      #DDD5C4;
+  --ink:      #0E0C0A;
+  --ink2:     #3D3830;
+  --muted:    #7A7168;
+  --muted2:   #A89F94;
+  --border:   #CFC6B4;
+  --border2:  #BFB6A4;
+  --alpha:    #4A6FA5;
+  --alpha-bg: rgba(74,111,165,0.08);
+  --alpha-border: rgba(74,111,165,0.22);
+  --dune:     #E0D8C8;
+  --sand:     #D4C9B6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── PAGE SHELL ── */
+.page { width: 1120px; margin: 0 auto; padding: 0 0 40px; }
+
+/* ── HERO HEADER ── */
+.hero {
+  padding: 48px 56px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 88px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -3px;
+  line-height: 0.92;
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border2);
+  background: var(--bg2);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+.hero-tagline {
+  font-size: 11.5px;
+  color: var(--muted);
+  text-align: right;
+  max-width: 220px;
+  line-height: 1.55;
+}
+
+/* ── DIVIDER ── */
+.h-rule {
+  margin: 32px 56px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ── GREEK ICONS ROW ── */
+.greek-row {
+  display: flex;
+  gap: 52px;
+  padding: 24px 56px 0;
+}
+.greek-item { display: flex; flex-direction: column; gap: 5px; }
+.greek-sym {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1;
+}
+.greek-sym.alpha { color: var(--alpha); }
+.greek-label {
+  font-size: 10.5px;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* ── DUNE SVG ── */
+.dune-wrap {
+  margin: 0 0 0;
+  line-height: 0;
+  overflow: hidden;
+  height: 80px;
+}
+.dune-wrap svg { width: 100%; }
+
+/* ── BODY ── */
+.body-wrap {
+  padding: 0 56px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+  margin-top: 36px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.card-pad { padding: 24px 26px; }
+
+.eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.sec-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.4px;
+}
+.sec-body {
+  font-size: 12px;
+  color: var(--ink2);
+  line-height: 1.72;
+  margin-bottom: 10px;
+}
+.sec-body strong { color: var(--ink); font-weight: 600; }
+hr.div { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: flex;
+  gap: 0;
+  padding: 18px 56px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  margin: 36px 0 0;
+}
+.stat-item {
+  flex: 1;
+  padding: 0 28px;
+  border-right: 1px solid var(--border);
+}
+.stat-item:first-child { padding-left: 0; }
+.stat-item:last-child { border-right: none; }
+.stat-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.stat-val .accent { color: var(--alpha); }
+.stat-lbl {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ── FLOW DIAGRAM ── */
+.flow-wrap {
+  margin-top: 20px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px 16px;
+}
+.flow-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 14px;
+  text-align: center;
+}
+.flow-wrap svg { width: 100%; display: block; }
+
+/* ── KPI GRID ── */
+.kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.kpi-cell {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.kpi-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.kpi-val .unit { font-size: 11px; color: var(--muted); font-weight: 400; }
+.kpi-val .hi { color: var(--alpha); }
+.kpi-lbl {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ── CHART ── */
+.chart-wrap {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px 10px;
+  margin-bottom: 12px;
+}
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.chart-title { font-size: 11px; font-weight: 600; color: var(--ink); }
+.chart-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--alpha-bg);
+  border: 1px solid var(--alpha-border);
+  color: var(--alpha);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+svg.chart { width: 100%; height: 90px; overflow: visible; display: block; }
+
+/* ── BENCH ROWS ── */
+.bench-row { margin-bottom: 12px; }
+.bench-row:last-child { margin-bottom: 0; }
+.bench-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.bench-name { font-size: 11px; color: var(--ink2); }
+.bench-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 700; color: var(--ink); }
+.bench-val.hi { color: var(--alpha); }
+.bench-bg { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.bench-fill { height: 100%; border-radius: 99px; background: var(--ink); }
+.bench-fill.hi { background: var(--alpha); }
+
+/* ── POSITION TABLE ── */
+.pos-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+.pos-table th {
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--muted); padding: 0 10px 8px 0; text-align: left; border-bottom: 1px solid var(--border);
+}
+.pos-table td {
+  font-size: 11.5px; color: var(--ink2); padding: 10px 10px 10px 0;
+  border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5;
+}
+.pos-table tr:last-child td { border-bottom: none; }
+.pos-table td:first-child { font-weight: 600; color: var(--ink); }
+.tag {
+  display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 8.5px;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.tag-blue { background: var(--alpha-bg); border: 1px solid var(--alpha-border); color: var(--alpha); }
+.tag-sand { background: var(--bg3); border: 1px solid var(--border2); color: var(--muted); }
+
+/* ── TEAM ── */
+.team-wrap { padding: 0 56px; margin-top: 28px; }
+.team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-top: 14px; }
+.team-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.team-initials {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--bg3); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 800; color: var(--ink2);
+  margin-bottom: 10px;
+}
+.team-name { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.team-role {
+  font-size: 9px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px;
+}
+.team-desc { font-size: 11px; color: var(--ink2); line-height: 1.55; }
+
+/* ── RISK ── */
+.risk-wrap { padding: 0 56px; margin-top: 28px; }
+.risk-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.risk-table th {
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--muted); padding: 0 14px 8px 0; text-align: left; border-bottom: 1px solid var(--border);
+}
+.risk-table td {
+  font-size: 11.5px; color: var(--ink2); padding: 11px 14px 11px 0;
+  border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55;
+}
+.risk-table tr:last-child td { border-bottom: none; }
+.risk-table td:first-child { font-weight: 600; color: var(--ink); width: 160px; }
+.sev {
+  display: inline-block; padding: 2px 7px; border-radius: 4px;
+  font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.sev-low { background: rgba(120,160,100,0.1); border: 1px solid rgba(120,160,100,0.3); color: #6A9050; }
+.sev-med { background: rgba(180,140,60,0.1); border: 1px solid rgba(180,140,60,0.3); color: #9A7830; }
+
+/* ── FOOTER ── */
+footer {
+  margin: 36px 56px 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.footer-brand .sub {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 3px;
+  letter-spacing: 0;
+}
+.footer-disc { font-size: 9.5px; color: var(--muted2); max-width: 500px; text-align: right; line-height: 1.5; }
+
+@media print {
+  body { background: #F0EBE0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-title">GAMMA<br>SIGMA</div>
+    <div class="hero-right">
+      <div class="pill">Prop Fund</div>
+      <div class="hero-tagline">Volatility-driven returns through systematic convexity capture</div>
+    </div>
+  </div>
+
+  <hr class="h-rule">
+
+  <!-- GREEK ICONS -->
+  <div class="greek-row">
+    <div class="greek-item">
+      <div class="greek-sym">&#915;</div>
+      <div class="greek-label">Convexity</div>
+    </div>
+    <div class="greek-item">
+      <div class="greek-sym">&#931;</div>
+      <div class="greek-label">Volatility</div>
+    </div>
+    <div class="greek-item">
+      <div class="greek-sym alpha">&#945;</div>
+      <div class="greek-label">Edge</div>
+    </div>
+  </div>
+
+  <!-- DUNE -->
+  <div class="dune-wrap">
+    <svg viewBox="0 0 1120 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,80 L0,55 Q140,20 280,48 Q420,76 560,38 Q700,0 840,30 Q980,60 1120,28 L1120,80 Z" fill="#E0D8C8"/>
+    </svg>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-val">$12.4<span style="font-size:16px;font-weight:600;color:var(--muted)">M</span></div>
+      <div class="stat-lbl">Fund AUM</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val"><span class="accent">24.7</span><span style="font-size:16px;font-weight:600;color:var(--muted)">% APR</span></div>
+      <div class="stat-lbl">12mo Avg Return</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">1.82</div>
+      <div class="stat-lbl">Sharpe Ratio</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">-6.4<span style="font-size:16px;font-weight:600;color:var(--muted)">%</span></div>
+      <div class="stat-lbl">Max Drawdown</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-wrap">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <div class="card card-pad">
+        <div class="eyebrow">Strategy Overview</div>
+        <div class="sec-title">Systematic Volatility Capture</div>
+        <p class="sec-body">Gamma Sigma is a crypto-native prop fund specialising in <strong>systematic options strategies</strong> across major liquid venues. The fund exploits persistent structural mispricings in implied volatility by maintaining a delta-neutral book with net positive convexity exposure.</p>
+        <p class="sec-body">Capital is deployed across two primary engines: a <strong>short-vega carry book</strong> that harvests the vol risk premium in rangebound conditions, and a <strong>long-gamma tail book</strong> that profits asymmetrically during dislocations. The combination targets positive expected value across all vol regimes.</p>
+        <hr class="div">
+        <div class="eyebrow">Mechanics</div>
+        <p class="sec-body"><strong>Carry engine</strong> — Sells near-dated straddles on BTC/ETH when realised vol is trending below implied. Positions are sized by a vol-normalised Kelly criterion and delta-hedged intraday via perpetual swaps.</p>
+        <p class="sec-body"><strong>Tail engine</strong> — Maintains a rolling position in cheap convexity via ratio spreads and calendar structures. This leg is self-financing over a full cycle and provides the portfolio with positive skew exposure without meaningful carry drag.</p>
+      </div>
+
+      <!-- FLOW DIAGRAM -->
+      <div class="flow-wrap">
+        <div class="flow-label">Capital Allocation — How Gamma Sigma Generates Returns</div>
+        <svg viewBox="0 0 660 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arr-ink" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,1.5 L0,7.5 L8,4.5 z" fill="#3D3830"/>
+            </marker>
+            <marker id="arr-alpha" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,1.5 L0,7.5 L8,4.5 z" fill="#4A6FA5"/>
+            </marker>
+            <marker id="arr-sand" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,1.5 L0,7.5 L8,4.5 z" fill="#7A7168"/>
+            </marker>
+          </defs>
+
+          <!-- FUND circle -->
+          <circle cx="110" cy="110" r="52" fill="#DDD5C4" stroke="#BFB6A4" stroke-width="1.2"/>
+          <text x="110" y="105" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="800" fill="#0E0C0A">GAMMA</text>
+          <text x="110" y="120" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="800" fill="#0E0C0A">SIGMA</text>
+          <text x="110" y="136" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#7A7168">Prop Fund</text>
+
+          <!-- Carry Engine -->
+          <circle cx="330" cy="66" r="44" fill="#DDD5C4" stroke="#BFB6A4" stroke-width="1.2"/>
+          <text x="330" y="60" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="800" fill="#0E0C0A">Carry</text>
+          <text x="330" y="74" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="800" fill="#0E0C0A">Engine</text>
+          <text x="330" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7A7168">~65% AUM</text>
+
+          <!-- Tail Engine -->
+          <circle cx="330" cy="170" r="44" fill="#DDD5C4" stroke="#BFB6A4" stroke-width="1.2"/>
+          <text x="330" y="164" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="800" fill="#0E0C0A">Tail</text>
+          <text x="330" y="178" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="800" fill="#0E0C0A">Engine</text>
+          <text x="330" y="193" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7A7168">~35% AUM</text>
+
+          <!-- Venues -->
+          <rect x="510" y="36" width="130" height="60" rx="10" fill="#DDD5C4" stroke="#BFB6A4" stroke-width="1.2"/>
+          <text x="575" y="61" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="700" fill="#0E0C0A">Deribit / Derive</text>
+          <text x="575" y="76" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7A7168">Options Venue</text>
+
+          <rect x="510" y="136" width="130" height="60" rx="10" fill="#DDD5C4" stroke="#4A6FA5" stroke-width="1.2"/>
+          <text x="575" y="161" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="700" fill="#0E0C0A">Hyperliquid</text>
+          <text x="575" y="176" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7A7168">Perp Hedging</text>
+
+          <!-- Arrows: Fund → Carry -->
+          <path d="M158,90 Q230,50 284,70" fill="none" stroke="#3D3830" stroke-width="1.5" marker-end="url(#arr-ink)"/>
+          <text x="218" y="60" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#3D3830">allocate</text>
+
+          <!-- Arrows: Fund → Tail -->
+          <path d="M158,130 Q230,168 284,158" fill="none" stroke="#4A6FA5" stroke-width="1.5" marker-end="url(#arr-alpha)"/>
+          <text x="218" y="158" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4A6FA5">allocate</text>
+
+          <!-- Arrows: Carry → Deribit -->
+          <path d="M374,66 L508,66" fill="none" stroke="#3D3830" stroke-width="1.5" marker-end="url(#arr-ink)"/>
+          <text x="441" y="60" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#3D3830">sell vol</text>
+
+          <!-- Arrows: Tail → Hyperliquid -->
+          <path d="M374,170 L508,170" fill="none" stroke="#4A6FA5" stroke-width="1.5" marker-end="url(#arr-alpha)"/>
+          <text x="441" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4A6FA5">hedge delta</text>
+
+          <!-- Returns back -->
+          <path d="M508,100 Q440,110 374,96" fill="none" stroke="#7A7168" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-sand)"/>
+          <text x="441" y="122" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7A7168">P&amp;L flows back</text>
+        </svg>
+      </div>
+
+      <!-- POSITIONS -->
+      <div class="card card-pad" style="margin-top:20px;">
+        <div class="eyebrow">Current Book Snapshot</div>
+        <div class="sec-title">Active Positions</div>
+        <table class="pos-table">
+          <thead>
+            <tr>
+              <th>Instrument</th>
+              <th>Type</th>
+              <th>Notional</th>
+              <th>Delta</th>
+              <th>P&amp;L (30d)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BTC 28-Mar $72k Straddle</td>
+              <td><span class="tag tag-sand">Carry</span></td>
+              <td>$2.1M</td>
+              <td>+0.04</td>
+              <td style="color:#6A9050;font-weight:600;">+$184k</td>
+            </tr>
+            <tr>
+              <td>ETH 25-Apr $2,800/$3,400 Call Spread</td>
+              <td><span class="tag tag-blue">Tail</span></td>
+              <td>$980k</td>
+              <td>+0.22</td>
+              <td style="color:#6A9050;font-weight:600;">+$67k</td>
+            </tr>
+            <tr>
+              <td>BTC Perp Short (delta hedge)</td>
+              <td><span class="tag tag-sand">Hedge</span></td>
+              <td>$1.8M</td>
+              <td>-0.18</td>
+              <td style="color:#7A7168;font-weight:600;">-$12k</td>
+            </tr>
+            <tr>
+              <td>SOL 30-May $180 Puts x10</td>
+              <td><span class="tag tag-blue">Tail</span></td>
+              <td>$430k</td>
+              <td>-0.09</td>
+              <td style="color:#6A9050;font-weight:600;">+$38k</td>
+            </tr>
+            <tr>
+              <td>ETH Butterfly — $2,600/$3,000/$3,400</td>
+              <td><span class="tag tag-sand">Carry</span></td>
+              <td>$720k</td>
+              <td>+0.01</td>
+              <td style="color:#9A7830;font-weight:600;">-$8k</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+
+      <!-- KPI GRID -->
+      <div class="eyebrow" style="margin-bottom:10px;">Key Metrics</div>
+      <div class="kpi-grid">
+        <div class="kpi-cell">
+          <div class="kpi-val"><span class="hi">24.7</span><span class="unit">%</span></div>
+          <div class="kpi-lbl">APR (12mo)</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-val">1.82</div>
+          <div class="kpi-lbl">Sharpe</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-val">-6.4<span class="unit">%</span></div>
+          <div class="kpi-lbl">Max Drawdown</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-val">73<span class="unit">%</span></div>
+          <div class="kpi-lbl">Win Rate</div>
+        </div>
+      </div>
+
+      <!-- RETURNS CHART -->
+      <div class="chart-wrap">
+        <div class="chart-head">
+          <div class="chart-title">Monthly Returns</div>
+          <div class="chart-badge">12mo</div>
+        </div>
+        <svg class="chart" viewBox="0 0 268 90">
+          <defs>
+            <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4A6FA5" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#4A6FA5" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- zero line -->
+          <line x1="0" y1="60" x2="268" y2="60" stroke="#BFB6A4" stroke-width="0.8" stroke-dasharray="3,3"/>
+          <!-- area fill -->
+          <path d="M0,52 L22,44 L44,58 L66,38 L88,30 L110,50 L132,20 L154,35 L176,42 L198,28 L220,15 L242,32 L268,22 L268,90 L0,90 Z" fill="url(#gfill)"/>
+          <!-- line -->
+          <polyline points="0,52 22,44 44,58 66,38 88,30 110,50 132,20 154,35 176,42 198,28 220,15 242,32 268,22"
+            fill="none" stroke="#4A6FA5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- dots -->
+          <circle cx="132" cy="20" r="3" fill="#4A6FA5"/>
+          <circle cx="220" cy="15" r="3" fill="#4A6FA5"/>
+          <!-- x-axis labels -->
+          <text x="0"   y="88" font-family="Inter,sans-serif" font-size="7" fill="#A89F94">Apr</text>
+          <text x="44"  y="88" font-family="Inter,sans-serif" font-size="7" fill="#A89F94">Jun</text>
+          <text x="88"  y="88" font-family="Inter,sans-serif" font-size="7" fill="#A89F94">Aug</text>
+          <text x="132" y="88" font-family="Inter,sans-serif" font-size="7" fill="#A89F94">Oct</text>
+          <text x="176" y="88" font-family="Inter,sans-serif" font-size="7" fill="#A89F94">Dec</text>
+          <text x="220" y="88" font-family="Inter,sans-serif" font-size="7" fill="#A89F94">Feb</text>
+        </svg>
+      </div>
+
+      <!-- YIELD BENCHMARKS -->
+      <div class="card card-pad" style="margin-bottom:14px;">
+        <div class="eyebrow" style="margin-bottom:14px;">Return Benchmarks</div>
+        <div class="bench-row">
+          <div class="bench-meta">
+            <div class="bench-name">Gamma Sigma</div>
+            <div class="bench-val hi">24.7%</div>
+          </div>
+          <div class="bench-bg"><div class="bench-fill hi" style="width:100%"></div></div>
+        </div>
+        <div class="bench-row">
+          <div class="bench-meta">
+            <div class="bench-name">BTC Buy &amp; Hold</div>
+            <div class="bench-val">18.2%</div>
+          </div>
+          <div class="bench-bg"><div class="bench-fill" style="width:74%;background:#7A7168"></div></div>
+        </div>
+        <div class="bench-row">
+          <div class="bench-meta">
+            <div class="bench-name">ETH Buy &amp; Hold</div>
+            <div class="bench-val">11.4%</div>
+          </div>
+          <div class="bench-bg"><div class="bench-fill" style="width:46%;background:#7A7168"></div></div>
+        </div>
+        <div class="bench-row">
+          <div class="bench-meta">
+            <div class="bench-name">T-Bills (risk-free)</div>
+            <div class="bench-val">4.8%</div>
+          </div>
+          <div class="bench-bg"><div class="bench-fill" style="width:19%;background:#A89F94"></div></div>
+        </div>
+      </div>
+
+      <!-- TERMS -->
+      <div class="card card-pad">
+        <div class="eyebrow" style="margin-bottom:14px;">Fund Terms</div>
+        <table style="width:100%;border-collapse:collapse;">
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="font-size:10.5px;color:var(--muted);padding:8px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;">Min Ticket</td>
+              <td style="font-size:12px;color:var(--ink);font-weight:700;text-align:right;padding:8px 0;">$250,000</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="font-size:10.5px;color:var(--muted);padding:8px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;">Redemptions</td>
+              <td style="font-size:12px;color:var(--ink);font-weight:700;text-align:right;padding:8px 0;">Monthly, 15d notice</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="font-size:10.5px;color:var(--muted);padding:8px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;">Mgmt Fee</td>
+              <td style="font-size:12px;color:var(--ink);font-weight:700;text-align:right;padding:8px 0;">1% / yr</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="font-size:10.5px;color:var(--muted);padding:8px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;">Perf Fee</td>
+              <td style="font-size:12px;color:var(--ink);font-weight:700;text-align:right;padding:8px 0;">20% above HWM</td>
+            </tr>
+            <tr>
+              <td style="font-size:10.5px;color:var(--muted);padding:8px 0;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;">Domicile</td>
+              <td style="font-size:12px;color:var(--ink);font-weight:700;text-align:right;padding:8px 0;">Cayman Islands</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="team-wrap">
+    <div class="eyebrow">The Team</div>
+    <div class="sec-title" style="font-size:22px;margin-top:4px;">Built by practitioners</div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-initials">AK</div>
+        <div class="team-name">Alex Kovacs</div>
+        <div class="team-role">Portfolio Manager</div>
+        <div class="team-desc">Former vol trader at <strong>Citadel Securities</strong>. 9 years in equity and crypto derivatives. Runs overall book construction and risk limits.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-initials">JL</div>
+        <div class="team-name">Jana Li</div>
+        <div class="team-role">Head of Quant Research</div>
+        <div class="team-desc">PhD in Stochastic Control, MIT. Previously at <strong>Two Sigma</strong> building vol surface models. Leads signal research and execution algorithms.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-initials">RM</div>
+        <div class="team-name">Rafi Mendez</div>
+        <div class="team-role">Head of Technology</div>
+        <div class="team-desc">Ex-<strong>Jump Trading</strong> infrastructure. Built low-latency options pricing engines. Owns all execution infrastructure and venue connectivity.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-initials">SS</div>
+        <div class="team-name">Sara Singh</div>
+        <div class="team-role">Risk &amp; Operations</div>
+        <div class="team-desc">Former risk officer at <strong>Cumberland DRW</strong>. Oversees independent risk monitoring, counterparty exposure, and LP reporting.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK FACTORS -->
+  <div class="risk-wrap">
+    <div class="eyebrow">Risk Factors</div>
+    <div class="sec-title" style="font-size:22px;margin-top:4px;">Known risks &amp; mitigants</div>
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Risk</th>
+          <th>Severity</th>
+          <th>Description</th>
+          <th>Mitigant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vol Regime Shift</td>
+          <td><span class="sev sev-med">Medium</span></td>
+          <td>A sustained low-vol environment compresses carry premiums; a sudden vol spike can create short-term losses on the carry book before delta hedges adjust.</td>
+          <td>Tail engine provides positive convexity offset. Stop-loss triggers at 8% monthly drawdown.</td>
+        </tr>
+        <tr>
+          <td>Venue Counterparty</td>
+          <td><span class="sev sev-med">Medium</span></td>
+          <td>Concentrated exposure to Deribit for options execution creates platform-specific settlement risk in an insolvency scenario.</td>
+          <td>Max 60% AUM on any single venue. Active migration plan to Derive (on-chain) for >30% of options flow.</td>
+        </tr>
+        <tr>
+          <td>Liquidity</td>
+          <td><span class="sev sev-low">Low</span></td>
+          <td>Deep out-of-the-money options can widen significantly in spread during stress, increasing hedging costs.</td>
+          <td>Portfolio maintains &gt;25% in unencumbered stablecoins at all times. Redemptions gated to monthly.</td>
+        </tr>
+        <tr>
+          <td>Execution Slippage</td>
+          <td><span class="sev sev-low">Low</span></td>
+          <td>High-frequency delta hedging via perps introduces slippage in illiquid hours, eroding returns on the carry book margin.</td>
+          <td>TWAP execution during off-peak hours. Internal slippage budget tracked per position and reported monthly.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      GAMMA SIGMA
+      <div class="sub">Prop Fund · March 2026 · Confidential</div>
+    </div>
+    <div class="footer-disc">This document is for informational purposes only and does not constitute an offer to sell or solicitation of an offer to buy any securities or fund interests. Past performance is not indicative of future results. All figures are illustrative. For authorised recipients only.</div>
+  </footer>
+
+</div>
+</body>
+</html>

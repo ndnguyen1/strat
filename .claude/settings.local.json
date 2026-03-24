@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.swfinstitute.org)",
+      "WebFetch(domain:www.dakota.com)",
+      "WebFetch(domain:fundcomb.com)",
+      "WebFetch(domain:www.austrac.gov.au)",
+      "WebFetch(domain:www.foa.org.au)",
+      "WebFetch(domain:andsimple.co)",
+      "WebFetch(domain:www.famcap.com)",
+      "WebFetch(domain:www.asianinvestor.net)",
+      "WebFetch(domain:zerocap.com)",
+      "WebFetch(domain:familyofficehub.io)"
+    ]
+  }
+}
