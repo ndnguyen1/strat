@@ -1,6 +1,6 @@
 {
  "argv": [
-  "python",
+  "/Users/miffy/strat/.venv/bin/python",
   "-m",
   "ipykernel_launcher",
   "-f",
